@@ -16,7 +16,7 @@ class Solution {
             sif[i]=po;
             po*=nums[i];
         }
-        for(int i=0;i<nums.length;i++){
+        for(int i=0;i<len;i++){
             nums[i]=pre[i]*sif[i];
         }
         return nums;
