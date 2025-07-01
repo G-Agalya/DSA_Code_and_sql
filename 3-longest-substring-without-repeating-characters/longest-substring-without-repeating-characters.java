@@ -4,7 +4,7 @@ class Solution {
         int l=0;
         int r=0;
         int max=0;
-        while(r<=s.length()-1){
+        while(r<s.length()){
            char c=s.charAt(r);
            if(!arr.contains(c)){
             arr.add(c);
