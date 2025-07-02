@@ -11,13 +11,11 @@ class Solution {
            sub.append(s.charAt(i));
           
         }
-         char[] c=sub.toString().toCharArray();
+        char[] c=sub.toString().toCharArray();
          Arrays.sort(c);
         if(Arrays.equals(p,c)){
             arr.add(0);
         }
-        
-        int o=1;
         for(int i=len;i<s.length();i++){
            sub.deleteCharAt(0);
            sub.append(s.charAt(i));
@@ -25,7 +23,6 @@ class Solution {
          Arrays.sort(c1);
         if(Arrays.equals(p,c1)){
             arr.add(i-len+1);
-            o++;
         }
         }
         return arr;
