@@ -1,23 +1,22 @@
 class NumArray {
     int[] prv;
-    public NumArray(int[] nums) {
-        prv=new int[nums.length];
-        this.prv[0]=nums[0];
-       
-        int sum1=0;
+    public NumArray(int[] nums) { 
+        int n=nums.length;
+        prv=new int[n];
+        prv[0]=nums[0];
         for(int i=1;i<nums.length;i++){
-            sum1=prv[i-1]+nums[i];
-            this.prv[i]=sum1;
+            prv[i]=prv[i-1]+nums[i];
         }
+
     }
     
     public int sumRange(int left, int right) {
-        int sum=this.prv[right];
-        if(left!=0){
-        sum=sum-this.prv[left-1];
+        if(left==0){
+            return prv[right];
         }
-        
-        return sum;
+        else{
+            return prv[right]-prv[left-1];
+        }
     }
 }
 
