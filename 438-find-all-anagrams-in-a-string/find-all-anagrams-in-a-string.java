@@ -1,31 +1,33 @@
 class Solution {
-    public List<Integer> findAnagrams(String s, String p1) {
-        int l=0;
-        List<Integer> arr=new ArrayList<>();
-        StringBuilder sub=new StringBuilder();
-        if(s.length()<p1.length()) return arr;
-        int in=0;
-        int len=p1.length();
-        char[] p=p1.toCharArray();
-        Arrays.sort(p);
-        for(int i=0;i<len && i<s.length();i++){
-           sub.append(s.charAt(i));
-          
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+        int slen = s.length(), plen = p.length();
+        if (slen < plen) return result;
+
+        int[] sCount = new int[26]; // freq for current window in s
+        int[] pCount = new int[26]; // freq for string p
+
+        // Build frequency count for p
+        for (int i = 0; i < plen; i++) {
+            sCount[s.charAt(i) - 'a']++;
+            pCount[p.charAt(i) - 'a']++;
         }
-        char[] c=sub.toString().toCharArray();
-         Arrays.sort(c);
-        if(Arrays.equals(p,c)){
-            arr.add(0);
+
+        // Check initial window
+        if (Arrays.equals(sCount, pCount)) {
+            result.add(0);
         }
-        for(int i=len;i<s.length();i++){
-           sub.deleteCharAt(0);
-           sub.append(s.charAt(i));
-           char[] c1=sub.toString().toCharArray();
-         Arrays.sort(c1);
-        if(Arrays.equals(p,c1)){
-            arr.add(i-len+1);
+
+        // Slide the window
+        for (int i = plen; i < slen; i++) {
+            sCount[s.charAt(i) - 'a']++; // add right char
+            sCount[s.charAt(i - plen) - 'a']--; // remove left char
+
+            if (Arrays.equals(sCount, pCount)) {
+                result.add(i - plen + 1);
+            }
         }
-        }
-        return arr;
+
+        return result;
     }
 }
