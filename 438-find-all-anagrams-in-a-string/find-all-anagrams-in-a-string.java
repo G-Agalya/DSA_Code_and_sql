@@ -3,6 +3,7 @@ class Solution {
         int l=0;
         List<Integer> arr=new ArrayList<>();
         StringBuilder sub=new StringBuilder();
+        if(s.length()<p1.length()) return arr;
         int in=0;
         int len=p1.length();
         char[] p=p1.toCharArray();
