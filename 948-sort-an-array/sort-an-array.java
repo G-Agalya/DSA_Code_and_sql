@@ -1,14 +1,18 @@
 class Solution {
-    public int[] sortArray(int[] arr) {
-      for(int i=1;i<arr.length;i++){
-         int key=arr[i];
-         int j=i-1;
-         while(j>=0 && arr[j]>key){
-            arr[j+1]=arr[j];
-            j--;
-         }
-         arr[j+1]=key;
-      }  
-      return arr;
+    public int[] sortArray(int[] nums) {
+        int n=nums.length;
+        int i=1;
+        while(i<n){
+            int c=nums[i];
+            int j=i-1;
+            while(j>=0 && nums[j]>c){
+                nums[j+1]=nums[j];
+                j--;
+            }
+            nums[j+1]=c;
+            i++;
+        }
+        
+        return nums;
     }
 }
