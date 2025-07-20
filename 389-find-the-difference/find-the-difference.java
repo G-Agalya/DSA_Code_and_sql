@@ -14,6 +14,6 @@ class Solution {
             }
         }
 
-        return tArr[tArr.length - 1]; // extra character at end
+        return tArr[tArr.length - 1];
     }
 }
