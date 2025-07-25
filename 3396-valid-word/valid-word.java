@@ -11,10 +11,7 @@ class Solution {
             else if((w>='a' && w<='z') || (w>='A' && w<='Z')){
                 co++;
             }
-            if((w>='a' && w<='z') || (w>='A' && w<='Z') ||(w>='0' && w<='9')){
-                c++;
-            }
-            else{
+            if(!((w>='a' && w<='z') || (w>='A' && w<='Z') ||(w>='0' && w<='9'))){
                 return false;
             }
         }
