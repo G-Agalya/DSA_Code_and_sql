@@ -13,7 +13,7 @@ class Solution {
                 if(fruits[i]<=baskets[j]){
                    flag=true;
                    arr.remove(k);
-                   k--;
+                   
                    break;
                 }
             }    
