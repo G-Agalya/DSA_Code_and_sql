@@ -3,7 +3,7 @@ class Solution {
         if(n==2147483647){
             return false;
         }
-        for(int i=0;i<100;i++){
+        for(int i=0;i<50;i++){
             int m=(int)Math.pow(2,i);
             if(n==m){
                 return true;
