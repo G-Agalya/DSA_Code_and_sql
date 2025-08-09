@@ -1,0 +1,14 @@
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if(n==2147483647){
+            return false;
+        }
+        for(int i=0;i<10000;i++){
+            int m=(int)Math.pow(2,i);
+            if(n==m){
+                return true;
+            }
+        }
+        return false;
+    }
+}
