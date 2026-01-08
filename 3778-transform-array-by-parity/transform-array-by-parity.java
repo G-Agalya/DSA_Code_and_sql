@@ -1,15 +1,21 @@
 class Solution {
     public int[] transformArray(int[] nums) {
-        int[] arr=new int[nums.length];
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]%2==0){
-                arr[i]=0;
-            }
-            else{
-                arr[i]=1;
+        int n=nums.length;
+        int y=0;
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            if(nums[i]%2!=0){
+               y++;
             }
         }
-        Arrays.sort(arr);
+        int l=0;
+        for(int i=n-1;i>=0;i--){
+            if(y==0){
+                break;
+            }
+            arr[i]=1;
+            y--;
+        }
         return arr;
     }
 }
