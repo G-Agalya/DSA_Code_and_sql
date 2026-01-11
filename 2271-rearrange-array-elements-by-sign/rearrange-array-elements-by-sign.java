@@ -11,8 +11,7 @@ class Solution {
             }
         }
         int y=0;
-        System.out.println(arr);
-        System.out.println(arr1);
+        
         for(int i=0;i<nums.length;i++){
             if(i%2==0){
             nums[i]=arr.get(y);
