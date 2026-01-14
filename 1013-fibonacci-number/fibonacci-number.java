@@ -1,12 +1,13 @@
 class Solution {
     public int fib(int n) {
-        int a=0;
-        int b=1;
-        int c=0;
-        for(int i=0;i<n;i++){
-            a=a+b;
-            b=a-b;
+        int[] dp=new int[n+1];
+        Arrays.fill(dp,-1);
+        if(n<=1){
+            return n;
         }
-        return a;
+        if(dp[n]!=-1){
+            return dp[n];
+        }
+        return dp[n]=fib(n-1)+fib(n-2);
     }
 }
