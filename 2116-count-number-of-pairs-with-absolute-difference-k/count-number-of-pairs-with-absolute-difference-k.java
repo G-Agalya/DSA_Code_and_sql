@@ -3,7 +3,8 @@ class Solution {
         int c=0;
         for(int i=0;i<nums.length;i++){
             for(int j=i+1;j<nums.length;j++){
-                if(Math.abs(nums[i]-nums[j])==k){
+                int v=Math.abs(nums[i]-nums[j]);
+                if(v==k){
                     c++;
                 }
             }
