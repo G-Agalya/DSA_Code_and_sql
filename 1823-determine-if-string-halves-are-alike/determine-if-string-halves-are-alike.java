@@ -17,8 +17,6 @@ class Solution {
                 c1++;
             }
         }
-        System.out.println(str);
-        System.out.print(str2);
         if(c2==c1){
             return true;
         }
