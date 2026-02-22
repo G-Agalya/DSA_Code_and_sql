@@ -4,7 +4,7 @@ class Solution {
         for(int i=l;i<=r;i++){
            int c=Integer.bitCount(i);
            if(isprime(c)){
-            System.out.print(c+" ");
+            
             co++;
            }
         }
